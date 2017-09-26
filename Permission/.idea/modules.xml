@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Permission.iml" filepath="$PROJECT_DIR$/Permission.iml" />
+      <module fileurl="file://C:\Users\msi\Documents\GitHub\Garbage\Permission\Permission.iml" filepath="C:\Users\msi\Documents\GitHub\Garbage\Permission\Permission.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\msi\Documents\GitHub\Garbage\Permission\app\app.iml" filepath="C:\Users\msi\Documents\GitHub\Garbage\Permission\app\app.iml" />
     </modules>
   </component>
 </project>

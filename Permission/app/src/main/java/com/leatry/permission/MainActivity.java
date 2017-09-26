@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -15,8 +16,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private static final int CAMERA = 2;
-    private static final int MY_PERMISSIONS_REQUEST_CALL_PHONE = 1;
+        private static final int MY_PERMISSIONS_REQUEST_CALL_PHONE = 1;
     private EditText mEt_phone;
 
     @Override
@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
+
     public void callphone(){
         String phone = mEt_phone.getText().toString().trim();
             System.out.println(phone);
@@ -52,5 +54,19 @@ public class MainActivity extends AppCompatActivity {
                 //4.开启一个界面，根据程序员指定的行为做事儿
                 startActivity(intent);
             }
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if(requestCode == MY_PERMISSIONS_REQUEST_CALL_PHONE) {
+            if(grantResults[0] == PackageManager.PERMISSION_GRANTED ) {
+                callphone();
+            } else {
+                Toast.makeText(MainActivity.this, "电话授权失败了", Toast.LENGTH_SHORT).show();
+            }
+        }
+
     }
 }
